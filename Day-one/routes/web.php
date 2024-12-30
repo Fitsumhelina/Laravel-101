@@ -3,8 +3,16 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
 Route::get('/about', function () {
-    return "welcome to about page ";
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/greet/{name}', function ($name) {
+    return view('hello' , ['name' => $name]);
 });
