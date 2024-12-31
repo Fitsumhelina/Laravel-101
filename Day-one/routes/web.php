@@ -10,9 +10,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/contact', function () {
+$router -> get('/contact', function () {
     return view('contact');
 });
 Route::get('/greet/{name}', function ($name) {
     return view('hello' , ['name' => $name]);
-});
+}) -> where ("name","fitse");
