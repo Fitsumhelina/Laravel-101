@@ -15,4 +15,8 @@ $router -> get('/contact', function () {
 });
 Route::get('/greet/{name}', function ($name) {
     return view('hello' , ['name' => $name]);
-}) -> where ("name","fitse");
+}) -> where ('name','fitse');
+
+Route::get('/int/{num?}', function ($num=21) {
+    return $num;
+}) -> where ('num' , '[0-9]+');
