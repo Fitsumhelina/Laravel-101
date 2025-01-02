@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,3 +21,7 @@ Route::get('/greet/{name}', function ($name) {
 Route::get('/int/{num?}', function ($num=21) {
     return $num;
 }) -> where ('num' , '[0-9]+');
+
+// Route::view('/', 'welcome');
+
+Route :: get ('/task' ,'TasksController@index' );
