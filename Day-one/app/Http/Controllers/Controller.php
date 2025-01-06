@@ -1,12 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
-
-class TasksController extends BaseController
+abstract class Controller
 {
-    public function index()
-    {
-        return 'Hello, World!';
-    }
+    //
 }

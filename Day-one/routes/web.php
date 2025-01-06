@@ -3,6 +3,7 @@
 use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -24,4 +25,6 @@ Route::get('/int/{num?}', function ($num=21) {
 
 // Route::view('/', 'welcome');
 
-Route :: get ('/task' ,'TasksController@index' );
+// Route :: view ('task' , 'TasksController@index' );
+Route::get('task', [TasksController::class, 'index']);
+// Route::resource('tasks', 'TasksController');
