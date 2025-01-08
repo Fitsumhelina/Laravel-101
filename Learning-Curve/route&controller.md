@@ -470,9 +470,10 @@ Route::group(['domain' => 'admin.example.com'], function () {
     });
 
     Route::get('/users', function () {
-        return 'Manage Users';
+        return 'Admin Users';
     });
 });
+
 ```
 
 #### Features:
