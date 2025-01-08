@@ -175,7 +175,7 @@ HTTP verbs, also known as HTTP methods, are part of the HTTP protocol and define
 | **GET**  | Retrieve data            | No                   | Yes        | Yes  |
 | **POST** | Create a resource        | Yes                  | No         | No   |
 | **PUT**  | Replace a resource       | Yes                  | Yes        | No   |
-| **PATCH**| Partially update resource| Yes                  | Yes        | No   |
+| **PATCH**| Partially update resource| Yes                  | No        | No   |
 | **DELETE**| Delete a resource       | Yes                  | Yes        | No   |
 | **HEAD** | Retrieve headers         | No                   | Yes        | Yes  |
 | **OPTIONS**| Check allowed methods | No                   | Yes        | Yes  |
@@ -389,8 +389,8 @@ Route::group(['prefix' => 'admin'], function () {
         return 'Admin Dashboard';
     });
 
-    Route::get('/users', function () {
-        return 'Manage Users';
+    Route::get('/ManageUsers', function () {
+        return 'Admin ManageUsers';
     });
 
     Route::get('/settings', function () {
