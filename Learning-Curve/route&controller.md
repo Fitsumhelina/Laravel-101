@@ -2037,3 +2037,5 @@ Laravel makes it easy to return different types of responses based on your appli
 4. **File Response:** Use `response()->download()` to return a file for download or `response()->file()` to return a file that can be viewed in the browser.
 
 These response types can be customized further by adding status codes, headers, or additional data, providing flexibility for how you interact with users or clients.
+
+ #### 🎯 Big thanks to [Yeabsira Behailu](https://github.com/Yabe12) for preparing this astonishing note! 🤩
