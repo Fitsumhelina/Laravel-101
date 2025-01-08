@@ -121,7 +121,7 @@ HTTP verbs, also known as HTTP methods, are part of the HTTP protocol and define
 - **Example**:
   - Request: `PATCH /users/1` (with body `{ "email": "newemail@example.com" }`)
   - Response: Updates the email of the user with ID `1`.
-- **Idempotent**: Yes. Repeating the same `PATCH` request produces the same result.
+- **Idempotent**: Generally No, because the outcome depends on the current state of the resource and how the patch is applied.
 
 ---
 
