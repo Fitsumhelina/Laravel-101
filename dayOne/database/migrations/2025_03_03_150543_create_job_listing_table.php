@@ -10,11 +10,11 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+    { 
         Schema::create('job_listings', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->integer('salary');
+            $table->string('salary');
             $table->timestamps();
         });
     }
