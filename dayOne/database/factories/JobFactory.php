@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\comments>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Job>
  */
-class CommentsFactory extends Factory
+class JobFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,7 @@ class CommentsFactory extends Factory
     public function definition(): array
     {
         return [
-            'content' => fake()->paragraph(),
-            'post_id' => post::factory(),
-
+            //
         ];
     }
 }
