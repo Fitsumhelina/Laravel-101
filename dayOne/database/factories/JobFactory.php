@@ -21,7 +21,7 @@ class JobFactory extends Factory
         return [
             'employer_id' => Employer::factory(),
             'tag_id' => Tag::factory(),
-            'title' => fake()->word(),
+            'title' => fake()->jobTitle(),
             'description' => fake()->paragraph(1),
             'location' => fake()->city(),
             'salary' => fake()->numberBetween(1000, 50000),
