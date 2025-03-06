@@ -11,7 +11,7 @@ class Tag extends Model
 
     protected $fillable = ['name'];
 
-    public function job(){
+    public function jobs (){
         return $this->belongsToMany(Job::class);
     }
 }
