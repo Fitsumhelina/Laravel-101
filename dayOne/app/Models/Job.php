@@ -17,7 +17,6 @@ class Job extends Model
         'location',
         'salary',
         'company',
-        'tags',
     ];
 
     public function tags()
