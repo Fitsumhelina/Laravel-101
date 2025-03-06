@@ -12,6 +12,7 @@ class Tag extends Model
     protected $fillable = ['name'];
 
     public function jobs (){
-        return $this->belongsToMany(Job::class);
+        return $this->belongsToMany(Job::class, foreignPivotKey: "job_listing_id");
     }
 }
+  
