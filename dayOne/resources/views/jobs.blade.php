@@ -9,9 +9,11 @@
                 <a href="/jobs/{{ $job['id'] }}" class="text-blue-500 hover:underline">
                     <h2 class="text-xl font-bold mb-2">{{ $job['title'] }}</h2>
                 </a>
-                    <p class="text-gray-700">Pays {{ $job['salary'] }} per year.</p>
+                    <p class="text-gray-700">Pays <strong>{{ $job['salary'] }}$</strong> per year.</p>
             </div>
         @endforeach
     </div>
+        <div>
+            {{ $jobs->links() }}
+        </div>
 </x-layout>
- 

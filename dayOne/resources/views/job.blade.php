@@ -18,7 +18,7 @@
             </div>
             <div class="mb-4">
                 <h3 class="text-xl font-semibold">Salary</h3>
-                <p class="text-gray-700">{{ $job['salary'] }} per year</p>
+                <p class="text-gray-700">{{ $job['salary'] }}$ per year</p>
             </div>
             <div class="mb-4">
                 <h3 class="text-xl font-semibold">Location</h3>
