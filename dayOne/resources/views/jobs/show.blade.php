@@ -30,7 +30,14 @@
         </div>
         <div class="flex justify-center space-x-4 p-4">
             <x-button href="/jobs/{{ $job['id'] }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</x-button>
-            <x-button href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</x-button>
+            <!-- Delete Button Form -->
+            <form action="/jobs/{{ $job->id }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                    Delete
+                </button>
+            </form>
         </div>
     </div>
 </x-layout>
