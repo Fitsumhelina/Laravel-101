@@ -11,13 +11,14 @@ class Job extends Model
 
     protected $table = 'job_listings';
 
-    protected $fillable = [
-        'title',
-        'description',
-        'location',
-        'salary',
-        'company',
-    ];
+    // protected $fillable = [
+    //     'title',
+    //     'description',
+    //     'location',
+    //     'salary',
+    //     'company',
+    // ];
+    protected $guarded = [];
 
     public function tags()
     {
