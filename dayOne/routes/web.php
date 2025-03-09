@@ -83,14 +83,16 @@ Route::patch('/jobs/{id}', function ($id) {
         'tag_id' => 12
     ]);
     //redirect
-    return redirect('/jobs/' . $id);
+    return redirect('/jobs/' . $job->$id);
 });
 
 //delete
-Route::get('/jobs/{id}/delete', function ($id) {
-    $job = Job::find($id);
+Route::delete('/jobs/{id}', function ($id) {
+    //authorize ...
 
-    return view('jobs.delete', ['job' => $job]);
+    Job::findOrFail($id)->delete();
+
+    return redirect('/jobs');
 });
 
 //contact
