@@ -39,14 +39,13 @@ Route::post('/jobs', function () {
     ]);
 
     Job::create([
-
         'title'=> request('title'),
         'description'=>request('description'),
         'location'=>request('location'),
         'salary'=>request('salary'),
         'company'=>request('company'),
-        'employer_id' => 12,
-        'tag_id' => 12
+        'employer_id' => 1,
+        'tag_id' => 9
     ]);
     return redirect('/jobs');
 });
@@ -79,11 +78,11 @@ Route::patch('/jobs/{id}', function ($id) {
         'location'=>request('location'),
         'salary'=>request('salary'),
         'company'=>request('company'),
-        'employer_id' => 12,
-        'tag_id' => 12
+        'employer_id' => 1,
+        'tag_id' => 9
     ]);
     //redirect
-    return redirect('/jobs/' . $job->$id);
+    return redirect("/jobs/{$id}");
 });
 
 //delete
