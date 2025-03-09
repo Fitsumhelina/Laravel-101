@@ -35,7 +35,6 @@
         <div>
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }}</h1>
         </div>
-        <x-button href="/jobs/create">Create Job</x-button>
     </header>
 
     <main>

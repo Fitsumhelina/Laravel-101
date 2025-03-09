@@ -13,6 +13,9 @@
             </div>
         @endforeach
     </div>
+    <div>
+        <x-button href="/jobs/create">Create Job</x-button>
+    </div>
         <div>
             {{ $jobs->links() }}
         </div>

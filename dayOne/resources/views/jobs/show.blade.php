@@ -28,5 +28,9 @@
                 <h3 class="text-xl font-semibold"><strong>{{$job->Employer->name}} </strong>Works here</h3>
             </div>
         </div>
+        <div class="flex justify-center space-x-4 p-4">
+            <x-button href="/jobs/{{ $job['id'] }}/edit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</x-button>
+            <x-button href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</x-button>
+        </div>
     </div>
 </x-layout>
