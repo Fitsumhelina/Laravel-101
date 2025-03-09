@@ -5,7 +5,7 @@
 
     <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="bg-gray-800 text-white text-center py-4">
-            <h2 class="text-2xl font-bold">Title : {{ $job['title'] }}</h2>
+            <h2 class="text-2xl font-bold">{{ $job->title }}</h2>
         </div>
         <div class="p-6">
             <div class="mb-4">
