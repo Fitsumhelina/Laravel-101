@@ -1,95 +1,28 @@
 <?php
 
+use App\Http\Controllers\JobController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Job;
 
 //home
-Route::get('/', function () {
-   return view('home');
-});
-
+Route::view('/', 'home');
 //index
-Route::get('/jobs', function () {
-    return view('jobs.index', [
-       'jobs' => Job::with('employer')->latest()->simplePaginate(6)
-     ]);
-});
+Route::get('/jobs', [JobController::class, 'index'] );
 
 //create
-Route::get(('/jobs/create'), function () {
-    return view('jobs.create');
-});
+Route::get(('/jobs/create'), [JobController::class, 'create'] );
 
 //show
-Route::get('/jobs/{job}', function (Job $job) {
-    return view('jobs.show', ['job' => $job]);
-});
-
+Route::get('/jobs/{job}', [JobController::class, 'show'] );
 //store
-Route::post('/jobs', function () {
-
-    request()->validate([
-        'title' => ['required', 'string', 'min:3'],
-        'description' => ['required'],
-        'location' => ['required'],
-        'salary' => ['required','numeric'],
-        'company' => ['required'],
-    ]);
-
-    Job::create([
-        'title'=> request('title'),
-        'description'=>request('description'),
-        'location'=>request('location'),
-        'salary'=>request('salary'),
-        'company'=>request('company'),
-        'employer_id' => 1,
-        'tag_id' => 9
-    ]);
-    return redirect('/jobs');
-});
-
+Route::post('/jobs', [JobController::class, 'store'] );
 //edit
-Route::get('/jobs/{job}/edit', function (Job $job) {
-    return view('jobs.update', ['job' => $job]);
-});
+Route::get('/jobs/{job}/edit',[JobController::class, 'edit'] );
 
 //update
-Route::patch('/jobs/{job}', function (Job $job) {
-    //authorize ...
-
-    //validation
-    request()->validate([
-        'title' => ['required', 'string', 'min:3'],
-        'description' => ['required'],
-        'location' => ['required'],
-        'salary' => ['required','numeric'],
-        'company' => ['required'],
-    ]);
-
-    // update`
-    $job->update([
-        'title'=> request('title'),
-        'description'=>request('description'),
-        'location'=>request('location'),
-        'salary'=>request('salary'),
-        'company'=>request('company'),
-        'employer_id' => 1,
-        'tag_id' => 9
-    ]);
-    //redirect
-    return redirect('/jobs/' . $job->id);
-});
+Route::patch('/jobs/{job}',[JobController::class, 'update'] );
 
 //delete
-Route::delete('/jobs/{job}', function (Job $job) {
-    //authorize ...
-
-    $job->delete();
-
-    return redirect('/jobs');
-});
+Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
 
 //contact
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::view('/contact', 'contact');
